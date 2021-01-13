@@ -1,0 +1,9 @@
+.nav-link.router-link-exact-active.router-link-active
+{
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light
+{
+    border-bottom: 1px solid #cccccc;
+}

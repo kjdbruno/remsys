@@ -1,8 +1,8 @@
 import Api from '@/services/Api'
 
 export default {
-    index () {
-        return Api().get('dashboard/collection')
+    index (dateSelected) {
+        return Api().get(`dashboard/collection/${dateSelected}`)
     },
     getReport (dates) {
         return Api().post('report/remittance', dates)

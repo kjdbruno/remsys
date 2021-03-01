@@ -16,10 +16,10 @@ module.exports = {
         try {
             pool.getConnection((err, connection) => {
 
-                const dateFrom = new Date()
-                const dateTo = new Date()
+                const dateFrom = req.params.dateSelected
+                const dateTo = req.params.dateSelected
 
-                const start = moment(dateFrom).format('YYYY-MM-DD 00:00:01');
+                const start = moment(dateFrom).format('YYYY-MM-DD 00:00:00');
                 const end = moment(dateTo).format('YYYY-MM-DD 23:59:59');
 
                 connection.query('CALL getDashboardCollection(?, ?)', [start, end], (err, rows) => {
@@ -44,7 +44,7 @@ module.exports = {
 
                 const { dateFrom, dateTo } = req.body
 
-                const start = moment(dateFrom).format('YYYY-MM-DD 00:00:01');
+                const start = moment(dateFrom).format('YYYY-MM-DD 00:00:00');
                 const end = moment(dateTo).format('YYYY-MM-DD 23:59:59');
 
                 connection.query('CALL getRemittance(?, ?)', [start, end], (err, rows) => {
